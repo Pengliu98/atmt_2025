@@ -112,8 +112,7 @@ if __name__ == "__main__":
             # combine source and target training data
             combined_training_data = f"{src_file},{tgt_file}"
             joint_processor.train_tokenizer(training_data=combined_training_data, model_dir=args.model_dir)
-            src_processor = joint_processor
-            tgt_processor = joint_processor
+           
             if not args.quiet:
                 logging.info('Trained Joint SentencePiece model with {} words'.format(joint_processor.vocab_size))
         else:
@@ -122,6 +121,8 @@ if __name__ == "__main__":
             if not args.quiet:
                 logging.info('Loaded Joint SentencePiece model from {}'.format(joint_tokenizer_model))
         joint_processor.save_vocab(args.model_dir)
+        src_processor = joint_processor
+        tgt_processor = joint_processor
 
     else:
         # SOURCE LANGUAGE:
