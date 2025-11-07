@@ -32,7 +32,6 @@ python preprocess.py \
 python train.py \
     --cuda \
     --data cz-en/data/prepared/ \
- 
     --src-tokenizer cz-en/tokenizers/joint-bpe-8000.model \
     --tgt-tokenizer cz-en/tokenizers/joint-bpe-8000.model \
     --source-lang cz \
@@ -57,7 +56,6 @@ python train.py \
 python translate.py \
     --cuda \
     --input ~/shares/cz-en/data/raw/test.cz \
-    
     --src-tokenizer cz-en/tokenizers/joint-bpe-8000.model \
     --tgt-tokenizer cz-en/tokenizers/joint-bpe-8000.model \
     --checkpoint-path cz-en/checkpoints/checkpoint_best.pt \
