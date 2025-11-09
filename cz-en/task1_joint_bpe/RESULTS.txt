@@ -1,0 +1,12 @@
+Task 1: Joint BPE Results
+========================
+Date: November 8, 2025
+
+Test BLEU: 7.74
+Validation BLEU (Best): 11.08
+Epochs Trained: 6
+
+Comparison:
+- Baseline (Assignment 1): 16.58 BLEU
+- Joint BPE: 7.74 BLEU
+- Difference: -8.84 BLEU (-53%)
