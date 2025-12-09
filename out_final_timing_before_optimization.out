@@ -1,0 +1,112 @@
+lipeng@u24-login-3:~/data/atmt_2025$ cat out_final_timing.out 
+
+Filesystems usage for user lipeng ( uid 646292788 ):
+-------------------------------------------------------------------------------------
+Directory                       Used   Limit   Used,%         Files     Limit
+-------------------------------------------------------------------------------------
+/home/lipeng                    26GB   373GB     6.9%         64630          
+/scratch/lipeng                   0B    20TB     0.0%             1          
+
+/shares/atomt.pilot.s3it.uzh    39GB    10TB     0.4%          4141          
+-------------------------------------------------------------------------------------
+
+!! Please note: the scratch filesystem is intended only for temporary storage.
+   Files in /scratch/lipeng that have not been accessed in more than 30 days
+   may be automatically deleted.
+
+Installing packages...
+Defaulting to user installation because normal site-packages is not writeable
+Looking in indexes: https://download.pytorch.org/whl/cu118
+Requirement already satisfied: torch in /home/lipeng/.local/lib/python3.12/site-packages (2.7.1+cu118)
+Requirement already satisfied: torchvision in /home/lipeng/.local/lib/python3.12/site-packages (0.22.1+cu118)
+Requirement already satisfied: torchaudio in /home/lipeng/.local/lib/python3.12/site-packages (2.7.1+cu118)
+Requirement already satisfied: filelock in /usr/lib/python3/dist-packages (from torch) (3.13.1)
+Requirement already satisfied: typing-extensions>=4.10.0 in /usr/lib/python3/dist-packages (from torch) (4.10.0)
+Requirement already satisfied: setuptools in /usr/lib/python3/dist-packages (from torch) (68.1.2)
+Requirement already satisfied: sympy>=1.13.3 in /home/lipeng/.local/lib/python3.12/site-packages (from torch) (1.14.0)
+Requirement already satisfied: networkx in /home/lipeng/.local/lib/python3.12/site-packages (from torch) (3.5)
+Requirement already satisfied: jinja2 in /home/lipeng/.local/lib/python3.12/site-packages (from torch) (3.1.6)
+Requirement already satisfied: fsspec in /home/lipeng/.local/lib/python3.12/site-packages (from torch) (2025.9.0)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu11==11.8.89 in /home/lipeng/.local/lib/python3.12/site-packages (from torch) (11.8.89)
+Requirement already satisfied: nvidia-cuda-runtime-cu11==11.8.89 in /home/lipeng/.local/lib/python3.12/site-packages (from torch) (11.8.89)
+Requirement already satisfied: nvidia-cuda-cupti-cu11==11.8.87 in /home/lipeng/.local/lib/python3.12/site-packages (from torch) (11.8.87)
+Requirement already satisfied: nvidia-cudnn-cu11==9.1.0.70 in /home/lipeng/.local/lib/python3.12/site-packages (from torch) (9.1.0.70)
+Requirement already satisfied: nvidia-cublas-cu11==11.11.3.6 in /home/lipeng/.local/lib/python3.12/site-packages (from torch) (11.11.3.6)
+Requirement already satisfied: nvidia-cufft-cu11==10.9.0.58 in /home/lipeng/.local/lib/python3.12/site-packages (from torch) (10.9.0.58)
+Requirement already satisfied: nvidia-curand-cu11==10.3.0.86 in /home/lipeng/.local/lib/python3.12/site-packages (from torch) (10.3.0.86)
+Requirement already satisfied: nvidia-cusolver-cu11==11.4.1.48 in /home/lipeng/.local/lib/python3.12/site-packages (from torch) (11.4.1.48)
+Requirement already satisfied: nvidia-cusparse-cu11==11.7.5.86 in /home/lipeng/.local/lib/python3.12/site-packages (from torch) (11.7.5.86)
+Requirement already satisfied: nvidia-nccl-cu11==2.21.5 in /home/lipeng/.local/lib/python3.12/site-packages (from torch) (2.21.5)
+Requirement already satisfied: nvidia-nvtx-cu11==11.8.86 in /home/lipeng/.local/lib/python3.12/site-packages (from torch) (11.8.86)
+Requirement already satisfied: triton==3.3.1 in /home/lipeng/.local/lib/python3.12/site-packages (from torch) (3.3.1)
+Requirement already satisfied: numpy in /usr/lib/python3/dist-packages (from torchvision) (1.26.4)
+Requirement already satisfied: pillow!=8.3.*,>=5.3.0 in /usr/lib/python3/dist-packages (from torchvision) (10.2.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /home/lipeng/.local/lib/python3.12/site-packages (from sympy>=1.13.3->torch) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /home/lipeng/.local/lib/python3.12/site-packages (from jinja2->torch) (2.1.5)
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: sentencepiece in /home/lipeng/.local/lib/python3.12/site-packages (0.2.1)
+Requirement already satisfied: tqdm in /home/lipeng/.local/lib/python3.12/site-packages (4.67.1)
+Requirement already satisfied: sacrebleu in /home/lipeng/.local/lib/python3.12/site-packages (2.5.1)
+Requirement already satisfied: portalocker in /home/lipeng/.local/lib/python3.12/site-packages (from sacrebleu) (3.2.0)
+Requirement already satisfied: regex in /home/lipeng/.local/lib/python3.12/site-packages (from sacrebleu) (2025.11.3)
+Requirement already satisfied: tabulate>=0.8.9 in /home/lipeng/.local/lib/python3.12/site-packages (from sacrebleu) (0.9.0)
+Requirement already satisfied: numpy>=1.17 in /usr/lib/python3/dist-packages (from sacrebleu) (1.26.4)
+Requirement already satisfied: colorama in /home/lipeng/.local/lib/python3.12/site-packages (from sacrebleu) (0.4.6)
+Requirement already satisfied: lxml in /usr/lib/python3/dist-packages (from sacrebleu) (5.2.1)
+
+Testing environment...
+PyTorch: 2.7.1+cu118
+CUDA: True
+All packages OK!
+
+===================================
+Quick Timing Test for Optimization
+===================================
+
+[1/3] Testing Greedy Decoding (k=1)...
+          PAD token: "<pad>", BOS token: "<s>", EOS token: "</s>"
+50it [00:41,  1.21it/s]
+[2025-12-09 22:26:21] Wrote 50 lines to test_50_greedy.txt
+[2025-12-09 22:26:21] Translation completed in 41.58 seconds
+translations: ['you, a harsh child of Kwangtung?', 'children whose ancestors hung in the hills of Sierras and pushed the dynamite into the sculpture in the rocks?', ' ⁇  I just want you to turn into a flash on the wall  ⁇   ⁇   ⁇   ⁇   ⁇ ', 'Your ancestors are now turning into the graves.', "you're pushing too much on me. You're pressing me too. You're pressing too much on me. You're pressing me too. You're pressing me too.", "I'm not a slave. I'm not a slave.", "I've been a protector.", ' ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇ ', "I'm sending the house a little less money.", ". I don't have to eat  ⁇ as to eat.", ". I'm a lot of evil.", "If I die, I'm fucked up.", 'my family will be fucked.', 'And do you? And do you have a pro?', 'what do you mean? What do you mean? What do you mean?', 'However, none of the interested parties had produced an alternative.', 'The revision is based on the modified capacity data provided by the applicant and covering the entire Union industry.', 'The revised data are provided with reference to publicly available data concerning, in particular, unused capacity and capacity of manufacturers who stopped operating due to financial difficulties.', 'As explained above in Section 6 of the ‘Makroeconomic indicators’, revised data provide a much more accurate set of capacity data available for the production of biodiesel during the period considered before data were initially provided and published in the provisional Regulation.', '. Everyone errors everyone errors. Everyone errors every error.', ", you know what it's like? Do you know what it's it's? What's it? What's it's? What's it?", "ious sins you've got a lot to eat. For heavy sins, you've got a lot to eat.", 'behind the light sins you can eat little enough.', 'ing to understand? Do you understand? Do you understand?', 'That man killed a boy and I helped him. I helped him.', 'I was happy. I was happy. I was happy.', '. forgive me. forgive me.', ', you have to go to work! You have to go to work! You have to go to work!', 'Geum-jao, what do those ocular shadows mean?', 'Well, you know why those kids... you know, why those kids...', ', hey! Hey! Hey! Hey! Hey! Hey!', "here's another one here! Here's another! Here's another here!", 'ing Hello? Hello? Hello?', '[5] Communication from the Commission to the European Parliament, the Council, the European Economic and Social Committee and the Committee of the Regions: the Digital Agenda for Europe, COM(2010) 245 final, 28.8.2010.', 'Study in Europe Erasmus and Leonardo da Vinci European Commission Home News Transport and Travel Energy and natural resources EU resources in Costa Economic, Finance and Tax Culture, Education and Youth Enterprise Regions and local development Justice and civil rights Science and technology Foreign EU Employment and Social Rights Agriculture, Fisheries and Food Environment, Consumer Protection and Health Studium and internships abroad?', ", Yo, you don't want to see the cellar, shit.", 'ing to you? Did it tell you that?', "now you're going to get out. Now you're going to get out of here.", 'house is not for sale.', 'what was it like? What was it like? What was it?', '... was it... experience?', '. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah.', '. It was certainly an experience. It was an experience.', "what's the smell of stink? What's the smell? What's it's for? What's this?", '. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah.', "That's... secret Navy Flowers and...", 'Hey, is everything okay? Is everything okay?', '. No, no, no, no, no, no.', '. Not either. No, not either. nor did it.', '. Actually, it is not really not really at all.']
+
+real	0m44.749s
+user	1m13.382s
+sys	0m0.757s
+
+[2/3] Testing Beam Search (k=3)...
+          PAD token: "<pad>", BOS token: "<s>", EOS token: "</s>"
+50it [00:24,  2.02it/s]
+[2025-12-09 22:26:48] Wrote 50 lines to test_50_beam3.txt
+[2025-12-09 22:26:48] Translation completed in 24.81 seconds
+translations: ['you, a bad child of Kwangtung?', 'children whose ancestors hung in the hills of Sierras and pushed the dynamite into the sculpture in the rocks?', ' ⁇  I just want you to turn into a flash on the wall.  ⁇  I want you to turn you into the wall  ⁇ ', 'Your ancestors are now turning into the graves.', "on me, you're pushing too much. You're pressing me too. You're pressing too much on me. You're pressing me too. You're pressing me too.", "I'm not a slave. I'm not a slave.", "I've been a protector. I've been a protector.", ' ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇ ', "I'm sending a house a little less money.", ". I don't have to eat  ⁇ as to eat. I don't have to eat.", ". I'm a lot of evil.", "If I die, I'm fucked. I'm fucked up. If I die, I'm gonna die, I'm gonna die, so I'm fucked up.", 'my family will be fucked.', 'And do you? And do you have a pro? And pro?', 'what do you mean? What do you mean? What do you mean?', 'However, none of the interested parties had produced an alternative.', 'The revision is based on the modified capacity data provided by the applicant and covering the entire Union industry.', 'Reserved data are provided with publicly available data concerning, in particular, unused capacity and capacity of manufacturers who stopped operating due to financial difficulties.', 'As explained above in Section 6 of the ‘Makroeconomic indicators’, revised data provide a much more accurate set of capacity data available for the production of biodiesel during the period considered before data were initially provided and published in the provisional Regulation.', '. Everyone errors everyone errors. Everyone errors every error.', ", you know what it's? What's it? What's it? What's it's, you know what it's like?", 'ious sins you have a lot to eat. For heavy sins, you have a lot to eat.', 'behind the light sins you can eat little enough.', 'ing to understand? Do you understand? Do you understand? Do you understand?', 'That man killed a boy and I helped him. I helped him.', '. I was happy. I was happy. I was happy. I was happy.I was happy.', '. forgive me. forgive me.', ', you have to go to work! You have to go to work! You have to go to work!', 'Geum-jao, what do those ocular shadows mean?', 'Well, you know why those kids... you know, why those kids...', ', hey! Hey! Hey! Hey! Hey! Hey! Hey!', "here's another one here! Here's another! Here's another here! Here's another!", 'ing Hello? Hello? Hello?', '[5] Communication from the Commission to the European Parliament, the Council, the European Economic and Social Committee and the Committee of the Regions: the Digital Agenda for Europe, COM(2010) 245 final, 28.8.2010.', 'Study in Europe Erasmus and Leonardo da Vinci European Commission Home News Transport and Travel Energy and natural resources EU resources in Costa Economic, Finance and Tax Culture, Education and Youth Enterprise Regions and local development Justice and civil rights Science and technology Foreign EU Employment and Social Rights Agriculture, Fisheries and Food Environment, Consumer Protection and Health Studium and internships abroad?', ", Yo, you don't want to see the cellar, shit.", 'ing to you? Did it tell you it?', 'now, get out of here. Take off now.', 'house is not for sale.', 'what was it like? What was it like? What was it like?', '... was it... experience?', '. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah.', '. It was certainly an experience. It was an experience.', "what's it for stinking? What's the smell? What's it's for? What's the smell?", '. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah.', "That's... secret Navy Flowers and...", 'Hey, is everything okay? Is everything okay?', '. No, no, no, no, no, no.', '. Not either. No, not either. nor did it.', '. Actually, it is not really not really at all.']
+
+real	0m27.646s
+user	0m44.624s
+sys	0m0.768s
+
+[3/3] Testing Beam Search (k=5)...
+          PAD token: "<pad>", BOS token: "<s>", EOS token: "</s>"
+50it [00:41,  1.21it/s]
+[2025-12-09 22:27:32] Wrote 50 lines to test_50_beam5.txt
+[2025-12-09 22:27:32] Translation completed in 41.49 seconds
+translations: ['you, a harsh child of Kwangtung?', 'children whose ancestors hung in the hills of Sierras and pushed the dynamite into the sculpture in the rocks?', ' ⁇  I just want you to turn into a flash on the wall  ⁇   ⁇   ⁇   ⁇   ⁇ ', 'Your ancestors are now turning into the graves.', "you're pushing too much on me. You're pressing me too. You're pressing too much on me. You're pressing me too. You're pressing me too.", "I'm not a slave. I'm not a slave.", "I've been a protector.", ' ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇   ⁇ ', "I'm sending the house a little less money.", ". I don't have to eat  ⁇ as to eat.", ". I'm a lot of evil.", "If I die, I'm fucked up.", 'my family will be fucked.', 'And do you? And do you have a pro?', 'what do you mean? What do you mean? What do you mean?', 'However, none of the interested parties had produced an alternative.', 'The revision is based on the modified capacity data provided by the applicant and covering the entire Union industry.', 'The revised data are provided with reference to publicly available data concerning, in particular, unused capacity and capacity of manufacturers who stopped operating due to financial difficulties.', 'As explained above in Section 6 of the ‘Makroeconomic indicators’, revised data provide a much more accurate set of capacity data available for the production of biodiesel during the period considered before data were initially provided and published in the provisional Regulation.', '. Everyone errors everyone errors. Everyone errors every error.', ", you know what it's like? Do you know what it's it's? What's it? What's it's? What's it?", "ious sins you've got a lot to eat. For heavy sins, you've got a lot to eat.", 'behind the light sins you can eat little enough.', 'ing to understand? Do you understand? Do you understand?', 'That man killed a boy and I helped him. I helped him.', 'I was happy. I was happy. I was happy.', '. forgive me. forgive me.', ', you have to go to work! You have to go to work! You have to go to work!', 'Geum-jao, what do those ocular shadows mean?', 'Well, you know why those kids... you know, why those kids...', ', hey! Hey! Hey! Hey! Hey! Hey!', "here's another one here! Here's another! Here's another here!", 'ing Hello? Hello? Hello?', '[5] Communication from the Commission to the European Parliament, the Council, the European Economic and Social Committee and the Committee of the Regions: the Digital Agenda for Europe, COM(2010) 245 final, 28.8.2010.', 'Study in Europe Erasmus and Leonardo da Vinci European Commission Home News Transport and Travel Energy and natural resources EU resources in Costa Economic, Finance and Tax Culture, Education and Youth Enterprise Regions and local development Justice and civil rights Science and technology Foreign EU Employment and Social Rights Agriculture, Fisheries and Food Environment, Consumer Protection and Health Studium and internships abroad?', ", Yo, you don't want to see the cellar, shit.", 'ing to you? Did it tell you that?', "now you're going to get out. Now you're going to get out of here.", 'house is not for sale.', 'what was it like? What was it like? What was it?', '... was it... experience?', '. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah.', '. It was certainly an experience. It was an experience.', "what's the smell of stink? What's the smell? What's it's for? What's this?", '. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah. Yeah.', "That's... secret Navy Flowers and...", 'Hey, is everything okay? Is everything okay?', '. No, no, no, no, no, no.', '. Not either. No, not either. nor did it.', '. Actually, it is not really not really at all.']
+
+real	0m43.953s
+user	1m13.337s
+sys	0m0.710s
+
+===================================
+RESULTS:
+===================================
+-rw-rw-r-- 1 lipeng lipeng 3.8K Dec  9 22:26 test_50_beam3.txt
+-rw-rw-r-- 1 lipeng lipeng 3.6K Dec  9 22:27 test_50_beam5.txt
+-rw-rw-r-- 1 lipeng lipeng 3.6K Dec  9 22:26 test_50_greedy.txt
+
+Line counts:
+   50 test_50_beam3.txt
+   50 test_50_beam5.txt
+   50 test_50_greedy.txt
+  150 total
+
+Done!
