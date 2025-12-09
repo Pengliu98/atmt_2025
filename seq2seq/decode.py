@@ -5,9 +5,13 @@ from seq2seq.models import Seq2SeqModel
 def decode(model: Seq2SeqModel, src_tokens: torch.Tensor, src_pad_mask: torch.Tensor, max_out_len: int,
            tgt_tokenizer: spm.SentencePieceProcessor, args, device: torch.device):
     """Decodes a sequence without teacher forcing. Works by relying on the model's own predictions, rather than the ground truth (trg_)"""
+    # how many sequences am I translating at once?
     batch_size = src_tokens.size(0)
+    # begin with just the BOS token
     BOS = tgt_tokenizer.bos_id()
+    # marks the end of a sequence
     EOS = tgt_tokenizer.eos_id()
+    # fills empty spaces in the sequence
     PAD = tgt_tokenizer.pad_id()
     generated = torch.full((batch_size, 1), BOS, dtype=torch.long, device=device)
     finished = torch.zeros(batch_size, dtype=torch.bool, device=device)
